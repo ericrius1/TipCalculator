@@ -16,14 +16,24 @@ class ViewController: UIViewController {
     @IBOutlet weak var totalLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
+ 
+        
         // Do any additional setup after loading the view, typically from a nib.
         tipLabel.text = "$0.00"
         totalLabel.text = "$0.00"
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        
+        var currentIndex = NSUserDefaults.standardUserDefaults().integerForKey("tipIndex")
+        
+        tipControl.selectedSegmentIndex = currentIndex
     }
 
 

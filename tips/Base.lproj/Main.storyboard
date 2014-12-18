@@ -7,7 +7,7 @@
         <!--View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="tips" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="vc1" id="vXZ-lx-hvc" customClass="ViewController" customModule="tips" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -83,7 +83,7 @@
                     <navigationItem key="navigationItem" id="R4z-77-It0">
                         <barButtonItem key="rightBarButtonItem" title="Settings" id="kYo-bM-pDv">
                             <connections>
-                                <segue destination="ey4-WN-oDC" kind="modal" modalTransitionStyle="crossDissolve" id="WRf-Bz-aDy"/>
+                                <segue destination="ey4-WN-oDC" kind="modal" id="2EK-8L-QLt"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -103,15 +103,51 @@
             </objects>
             <point key="canvasLocation" x="836" y="352"/>
         </scene>
-        <!--View Controller-->
+        <!--Settings View Controller-->
         <scene sceneID="JF6-82-4vQ">
             <objects>
-                <viewController id="ey4-WN-oDC" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="vc2" id="ey4-WN-oDC" customClass="SettingsViewController" customModule="tips" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="afD-IR-Kzn">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="KIr-zR-fw4">
+                                <rect key="frame" x="130" y="242" width="60" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Go Back">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onTouch:" destination="ey4-WN-oDC" eventType="touchDown" id="Dqa-Tb-76C"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Default Tip percentage" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="W4z-sp-n83">
+                                <rect key="frame" x="122" y="33" width="175" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="yDE-FS-0lE">
+                                <rect key="frame" x="21" y="363" width="278" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="18%"/>
+                                    <segment title="20%"/>
+                                    <segment title="22%"/>
+                                </segments>
+                                <connections>
+                                    <action selector="defaultSettingsChanged:" destination="ey4-WN-oDC" eventType="valueChanged" id="7f2-zH-spW"/>
+                                    <action selector="onEditingChanged:" destination="vXZ-lx-hvc" eventType="valueChanged" id="Lal-5g-x7d"/>
+                                </connections>
+                            </segmentedControl>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="7q1-dL-kGt"/>
+                    <connections>
+                        <outlet property="defaultSettings" destination="yDE-FS-0lE" id="PKT-zW-GQr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7zN-hb-wr2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
