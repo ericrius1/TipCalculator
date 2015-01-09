@@ -16,4 +16,4 @@ Completed user stories:
 
 Walkthrough of all user stories:
 
-![alt tag](http://i.imgur.com/vOYPQF1.gifv)
+![alt tag](http://i.imgur.com/vOYPQF1.gif)
